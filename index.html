@@ -1,0 +1,27 @@
+<html>
+  <head>
+    <script src="https://unpkg.com/htmx.org@1.9.10"></script>
+    <title>hello world</title>
+    <style>
+      #wrapper {
+        background: blanchedalmond;
+        margin: 20px;
+        padding: 20px;
+      }
+      section {
+        background: gold;
+        padding: 20px;
+      }
+    </style>
+  </head>
+  <body>
+    <p>hello world</p>
+    <button hx-get="/test" hx-swap="ignoreTitle:true" hx-target="#wrapper">
+      get new content
+    </button>
+    <button hx-get="/" hx-swap="ignoreTitle:true" hx-target="body">
+      put it back
+    </button>
+    <div id="wrapper">this will be replaced</div>
+  </body>
+</html>
