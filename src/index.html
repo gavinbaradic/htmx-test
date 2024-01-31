@@ -1,18 +1,12 @@
 <html>
   <head>
     <script src="https://unpkg.com/htmx.org@1.9.10"></script>
+    <script
+      defer
+      src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"
+    ></script>
+    <link rel="stylesheet" href="/app.css" />
     <title>hello world</title>
-    <style>
-      #wrapper {
-        background: blanchedalmond;
-        margin: 20px;
-        padding: 20px;
-      }
-      section {
-        background: gold;
-        padding: 20px;
-      }
-    </style>
   </head>
   <body>
     <p>hello world</p>
@@ -22,6 +16,10 @@
     <button hx-get="/" hx-swap="ignoreTitle:true" hx-target="body">
       put it back
     </button>
+    <div x-data="{ count: 0 }">
+      <button x-on:click="count++">Increment</button>
+      <span x-text="count"></span>
+    </div>
     <div id="wrapper">this will be replaced</div>
   </body>
 </html>
